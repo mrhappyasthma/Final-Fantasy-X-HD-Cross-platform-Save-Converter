@@ -2,13 +2,17 @@
 
 <img src="https://i.ytimg.com/vi/myDYi0I-cgQ/maxresdefault.jpg" width="640" height="360">
 
-A helper tool to convert FFX saves from PS3/PS4/PSVita/Switch/PC.
+A helper tool to convert FFX saves from PS3/PS4/PSVita/PC to Nintendo Switch.
+
+(NOTE: You can convert saves across any platform. But there this tool is not required for going to/from anything but Nintendo Switch. I tried to include instructions for every platform that I could in this README for your convenience.)
 
 The tool assumes you already have your existing FFX save file (decrypted, if needed) on your computer.
 
 Simply run the tool, set the path to your source save file, and select the source/target platforms.
 
 ## Compatibility
+
+Below is the compatibility chart going to/from the Nintendo Switch.
 
 ### FFX
 
@@ -21,10 +25,9 @@ If supported is 'maybe', it means that I should be able to support it but haven'
 | Console | Supported? | Verified |
 |---------|------------|----------|
 | PS3 | YES | YES |
-| PS4 | MAYBE | NO |
-| PS Vita | MAYBE | NO |
-| PC | MAYBE | NO |
-| Nintendo Switch | YES | YES |
+| PS4 | YES | NO |
+| PS Vita | YES | NO |
+| PC | YES | NO |
 | Xbox One | NO | NO |
 
 ### FFX-2
@@ -141,27 +144,15 @@ Getting CFW on your Switch is outside the scope of this project. For more detail
 
 TODO: No idea on this one. I don't have this game to see if it's encrypted or not. And what format the save is in.
 
-## Run the software.
+## Run the software and copy the save file to Nintendo Switch
+
+NOTE: If you are using a Nintendo Switch as your source or destination for your save file, you'll need to have a Switch running Custom Firmware (CFW).
+
+### Run the software to create the modified save file
 
 TODO: Add instructions on how to run the software with the source save.
 
-## Copy the save (encrypted, if needed) to the target console
-
-### Encrypt and copy the save file to PS3
-
-TODO
-
-### Encrypt and copy the save file to PS4
-
-TODO: I don't have this game to verify. But my understanding is that similar decryption steps for the PS3 can be performed. Give that a try.
-
-### Encrypt and copy your save file to PS Vita
-
-TODO
-
-### Copy the save file to Nintendo Switch
-
-NOTE: If you are using a Nintendo Switch as your source or destination for your save file, you'll need to have a Switch running Custom Firmware (CFW).
+### Copy the modified file to Nintendo Switch
 
 Getting CFW on your Switch is outside the scope of this project. For more details, see [switch.homebrew.guide](https://switch.homebrew.guide/) for more info.
 
@@ -174,6 +165,20 @@ Getting CFW on your Switch is outside the scope of this project. For more detail
 4. Use FTP (such as [ftpd](https://github.com/mtheall/ftpd)) or by plugging your SD card into your computer, copy the save file to the `Checkpoint` subfolder for FFX. (For me, it was `/switch/Checkpoint/saves/0x0100BC300CB48000%20FINAL%20FANTASY%20X%20X-2%20HD%20Remaster/<folder_name_from_step_2>`).
 
 5. Run `Checkpoint` and restore the save for FFX.
+
+## Supplemental instructions to copy a save (encrypted, if needed) to other target consoles
+
+### Encrypt and copy the save file to PS3
+
+TODO
+
+### Encrypt and copy the save file to PS4
+
+TODO: I don't have this game to verify. But my understanding is that similar decryption steps for the PS3 can be performed. Give that a try.
+
+### Encrypt and copy your save file to PS Vita
+
+TODO
 
 6. Launch FFX and enjoy :)
 
