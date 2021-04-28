@@ -139,9 +139,25 @@ If last 8 bytes are not all 00’s likely it’s encrypted by PS3/PS4 or Vita.
 
 ## Known issues
 
-A.) The main character name will be reset to Tidus.
+1. The main character name will be reset to Tidus.
 
-B.) After the save is ported to the new platform, the 'time played' and 'party members' that are previewed in the Load Game menu will be wrong.
+2. After the save is ported to the new platform, the 'time played' and 'party members' that are previewed in the Load Game menu will be wrong.
 
-This should fix itself if you save to another slot or save overtop of this save after loading it.
+   This should fix itself if you save to another slot or save overtop of this save after loading it.
+   
+   Here is an example of a save ported to Nintedo Switch from PS3.
+   
+   ![Example of a messed up save in slot 2](https://i.imgur.com/RAIDEEP.jpg)
+   
+   The save file should still launch fine. The next time you save, it should correct itself.
+   
+   Here is an example where I launched that save and saved it as slot 3:
+   
+   ![Example of re-saving the file in slot3](https://i.imgur.com/oB4jPmR.jpg)
+   
+   And here's an example where I launched the save and overwrite the same save to correct it:
+   
+   ![Example of overwriting the save file in slot2](https://i.imgur.com/z6TYrtP.jpg)
+   
+   
 
