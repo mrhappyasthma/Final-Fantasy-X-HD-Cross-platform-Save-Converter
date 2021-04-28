@@ -10,6 +10,8 @@ Simply run the tool, set the path to your source save file, and select the sourc
 
 ## Compatibility
 
+### FFX
+
 Aside from Xbox, I believe all of the others should be doable just based on my research. I could not find anyone attempting this with Xbox.
 
 If supported is 'maybe', it means that I should be able to support it but haven't done it yet.
@@ -25,6 +27,9 @@ If supported is 'maybe', it means that I should be able to support it but haven'
 | Nintendo Switch | YES | YES |
 | Xbox One | NO | NO |
 
+### FFX-2
+
+This 'should' be implementable. But I don't have saves to test it. This is a stretch goal for me.
 
 ## Known issues
 
