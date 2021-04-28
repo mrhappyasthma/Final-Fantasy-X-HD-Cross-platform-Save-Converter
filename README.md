@@ -210,3 +210,10 @@ PC file format name:
 ffx_XXX.dat where number from 000-999
 
 If last 8 bytes are not all 00’s likely it’s encrypted by PS3/PS4 or Vita.
+
+FFX-2
+
+Download HxD, navigate to your save file folder "C:\Users\username\Documents\Square Enix\FINAL FANTASY X&X-2 HD Remaster\FINAL FANTASY X-2"
+Rename your save file to ffx2_main_001.
+Open it with HxD and copy 08 00 00 00 01 00 01 02 then go to Edit>Paste Insert.
+Save the file, transfer it to Checkpoint on the Switch and restore save.
