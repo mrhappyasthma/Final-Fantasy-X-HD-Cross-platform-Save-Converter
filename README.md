@@ -8,6 +8,24 @@ The tool assumes you already have your existing FFX save file (decrypted, if nee
 
 Simply run the tool, set the path to your source save file, and select the source/target platforms.
 
+## Compatibility
+
+Aside from Xbox, I believe all of the others should be doable just based on my research. I could not find anyone attempting this with Xbox.
+
+If supported is 'maybe', it means that I should be able to support it but haven't done it yet.
+
+'Verified' means that I tried going to/from the console to confirm it worked..
+
+| Console | Supported? | Verified |
+|---------|------------|----------|
+| PS3 | YES | YES |
+| PS4 | MAYBE | NO |
+| PS Vita | MAYBE | NO |
+| PC | MAYBE | NO |
+| Nintendo Switch | YES | YES |
+| Xbox One | NO | NO |
+
+
 ## Known issues
 
 1. The main character name will be reset to Tidus.
