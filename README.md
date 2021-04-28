@@ -1,4 +1,4 @@
-# FFX-HD - Save-Converter
+# Final Fantasy X HD - Cross-platform Save Converter
 
 A helper tool to convert FFX saves from PS3/PS4/PSVita/Switch/PC.
 
@@ -6,17 +6,17 @@ The tool assumes you already have your existing FFX save file (decrypted, if nee
 
 Simply run the tool, set the path to your source save file, and select the source/target platforms.
 
-## Prework
+## Playstation Consoles (prework)
 
-### Playstation Consoles
+Please read the following sub-section(s) if your save file is coming from or going to your PS3, PS4, or PS Vita.
 
-Please read the following sub-section(s) if your source save is from your PS3, PS4, or PS Vita.
+If the source of your save is from a Playstation console, you will need to decrypt it, since playstation consoles encrypt their saves. If you already have a decrypted save, or know how to do this already, please skip ahead.
 
-Playstation consoles encrypt their saves. If you already have a decrypted save, or know how to do this already, please skip ahead.
+If the destination for your save is a Playstation console, you will need to encrypt the output this program.
 
-If not, see below for details on how to decrypt the saves.
+#### Files transfered to/from PS3
 
-#### Files transfered FROM PS3
+This section is written assuming you are transfering a file FROM the PS3. But the instructions are quite similar when going the other way around.
 
 0. Copy your save file from your PS3 to a USB drive. And then copy it onto you computer.
 
@@ -56,15 +56,23 @@ You're now done with this software. You can close it or even uninstall it, if yo
 
 If you need to re-encrypt a save to put it back onto a PS3. The steps 5-14 can be done the same way, except this time you'll have the option for step 12 to `Encrypt all files`.
 
-#### Files transfered FROM PS4
+#### Files transfered to/from PS4
 
 TODO: I don't have this game to verify. But my understanding is that similar decryption steps for the PS3 can be performed. Give that a try.
 
-#### Files transfered FROM PS Vita
+#### Files transfered to/from PS Vita
 
 NOTE: This requires Custom Firmware (CFW) running on the Vita. Installing it on the Vita is outside the scope of this project. See [vita.hacks.guide](https://vita.hacks.guide/) for more info.
 
-TODO
+0. Install the [vita-savemgr](https://github.com/d3m3vilurr/vita-savemgr/releases) using `Vita Shell`.
+
+1. Use the save manager to backup a decrypted version of your save file.
+
+2. Using FTP (from `Vita Shell`) or by plugging your console in to your computer using USB, copy the save file to your PC.
+
+3. This save file can be used as the input to the program, since it's already decrypted.
+
+If you are targeting the PS Vita as the destination for the output of the program, you can reverse these instructions by placing the file onto your Vita and using `vita-savemgr` to restore it.
 
 ### Nintendo Switch Console
 
