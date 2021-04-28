@@ -216,7 +216,6 @@ Switch to PC
 2 use winhex open two save
 3 in psv save press ctrl+a and press ctrl+shift+c
 4 in ns save , press alt+g , input "00000008" confirm the cursor moves to the middle position , press ctrl+b , press ctrl+s , ok
-## Sources
 
 https://www.reddit.com/r/ps3homebrew/wiki/ps3_saves
 
