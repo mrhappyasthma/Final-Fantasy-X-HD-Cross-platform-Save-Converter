@@ -2,7 +2,7 @@
 
 <img src="https://i.ytimg.com/vi/myDYi0I-cgQ/maxresdefault.jpg" width="640" height="360">
 
-A helper tool to convert FFX saves from PS3/PS4/PSVita/PC to Nintendo Switch.
+A helper tool to convert FFX saves from PS3/PS4/PSVita/PC to and from Nintendo Switch.
 
 (NOTE: You can convert saves across any platform. But there this tool is not required for going to/from anything but Nintendo Switch. I tried to include instructions for every platform that I could in this README for your convenience.)
 
