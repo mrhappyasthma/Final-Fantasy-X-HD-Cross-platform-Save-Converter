@@ -16,7 +16,7 @@ Aside from Xbox, I believe all of the others should be doable just based on my r
 
 If supported is 'maybe', it means that I should be able to support it but haven't done it yet.
 
-'Verified' means that I tried going to/from the console to confirm it worked..
+'Verified' means that I tried going to/from the console to confirm it worked.
 
 | Console | Supported? | Verified |
 |---------|------------|----------|
