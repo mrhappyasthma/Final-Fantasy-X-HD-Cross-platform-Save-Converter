@@ -22,6 +22,12 @@ from tkinter import *
 from tkinter import filedialog
 from tkinter import messagebox
 
+# The Switch save file allegedly uses some kind of 8-byte timestamp at the
+# beginning of the save file. I couldn't find much concrete info about it,
+# but according to the forum posts using this value appears to work. Perhaps
+# a better alternative would be to also accept an existing FFX save file
+# extracted from a target nintendo switch in order to reuse the exact 8
+# bytes generated from the header file for a legit save.
 SWITCH_PREFIX_BYTES = bytearray.fromhex('08 00 00 00 01 00 01 02')
 
 SWITCH_SUFFIX_BYTES = bytearray.fromhex('00 00 00 00 00 00 00 00')
