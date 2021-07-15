@@ -89,16 +89,16 @@ def convert_save_file(game_option, save_type_option, target_console_option):
       if not answer:
         return
 
-  # TODO: Convert saves
-  if 'Nintendo Switch' in target:
-    # Append the 8 byte prefix
-    # Remove the trailing 8 bytes to keep the file size the same. (These are all 0x00 anyway.)
-    messagebox.showinfo(title='Nintendo Switch Save',
-                        message="Your save is now ready!\n\nPost-work:\n\n1. Rename it from 'ffx_XXX' by replacing the 'XXX' with a number from 000-999 that doesn't collide with an existing save slot. For example: 'ffx_001' would correspond to the second save slot.\n\n2. Use Checkpoint to restore the save.\n\n3. Load the save file on your switch (it may look weird, but this is normal).\n\n4. Use an in-game save point to save the current game. This will fix any weirdness.\n\nFor more details, view the guide on https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter")
-  elif 'PS3' in target:
-    pass
-  elif 'PC' in target:
-    pass
+    # TODO: Convert saves
+    if 'Nintendo Switch' in target:
+      # Append the 8 byte prefix
+      # Remove the trailing 8 bytes to keep the file size the same. (These are all 0x00 anyway.)
+      messagebox.showinfo(title='Nintendo Switch Save',
+                          message="Your save is now ready!\n\nPost-work:\n\n1. Rename it from 'ffx_XXX' by replacing the 'XXX' with a number from 000-999 that doesn't collide with an existing save slot. For example: 'ffx_001' would correspond to the second save slot.\n\n2. Use Checkpoint to restore the save.\n\n3. Load the save file on your switch (it may look weird, but this is normal).\n\n4. Use an in-game save point to save the current game. This will fix any weirdness.\n\nFor more details, view the guide on https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter")
+    elif 'PS3' in target:
+      pass
+    elif 'PC' in target:
+      pass
 
 
 if __name__ == '__main__':
