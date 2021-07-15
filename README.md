@@ -6,7 +6,9 @@
 
 WARNING: Use this tool at your own risk. I take no responsibility for lost save files, corrupted saves, bricked consoles, etc.
 
-The methods used here are very inexact and are based around random forums posts online. The tool will modifying arbitrary bytes of the save files, so there is a possibility that things go wrong.
+The methods used here are very inexact and are based around random forums posts online. For many consoles, custom firmware (CFW) may be required. That is outside the scope of this project, but links to more resources will be provided.
+
+The tool itself modifies arbitrary bytes of the save files, so there is a possibility that things go wrong. Always make backups of your saves.
 
 ## How To Use
 
