@@ -1,3 +1,19 @@
+"""A python script to convert Final Fantasy X HD saves across platforms.
+
+DISCLAIMER: Use this script at your own risk!
+
+For compatibility, see: https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter#compatibility
+
+For known issues, see: https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter#known-issues
+
+For instructions on extracting a save file to use as an input, see: https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter#extract-a-decrypted-version-of-your-save-file
+
+Resources used:
+  - https://gbatemp.net/threads/convert-ff10-pc-ps3-ps4-psv-save-to-ns.535866/
+  - https://steamcommunity.com/sharedfiles/filedetails/?id=685884099
+  - https://steamcommunity.com/sharedfiles/filedetails/?id=683458202
+"""
+
 import binascii
 import os
 import sys
