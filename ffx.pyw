@@ -4,6 +4,10 @@ from tkinter import messagebox
 import sys
 import binascii
 
+SWITCH_PREFIX_BYTES = '08 00 00 00 01 00 01 02'
+
+SWITCH_SUFFIX_BYTES = '00 00 00 00 00 00 00 00'
+
 
 def createRow(root, label, options):
   """Creates a new row.
