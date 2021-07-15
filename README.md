@@ -1,14 +1,18 @@
 # Final Fantasy X HD - Cross-platform Save Converter
 
-<img src="https://i.ytimg.com/vi/myDYi0I-cgQ/maxresdefault.jpg" width="640" height="360">
+<img src="https://i.ytimg.com/vi/myDYi0I-cgQ/maxresdefault.jpg" width="480" height="270">
 
-A helper tool to convert FFX saves from PS3/PS4/PSVita/PC to and from Nintendo Switch.
+## How To Use
 
-(NOTE: You can convert saves across any platform. But there this tool is not required for going to/from anything but Nintendo Switch. I tried to include instructions for every platform that I could in this README for your convenience.)
+A helper tool to convert FFX saves between PS3/PS4/PSVita/Steam/Nintendo Switch/Xbox One.
 
-The tool assumes you already have your existing FFX save file (decrypted, if needed) on your computer.
+*The tool assumes you already have your existing FFX save file (decrypted, if needed) on your computer. Read below for instructions.*
 
-Simply run the tool, set the path to your source save file, and select the source/target platforms.
+Simply run the tool, select the `Save File Type` for the input save as well as the `Target Console`. Then simply press `Convert save file` and select your existing (decrypted) save.
+
+Lastly, follow the on-screen instructions for the post-work. Or continue reading below.
+
+![Screenshot of the tool.](https://i.imgur.com/9gtNHnV.png)
 
 ## Compatibility
 
