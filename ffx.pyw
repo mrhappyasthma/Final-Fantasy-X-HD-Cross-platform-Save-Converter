@@ -95,6 +95,7 @@ if __name__ == '__main__':
   tk = Tk()
   tk.title("FFX Save Converter")
   tk.resizable(False, False)
+  tk.geometry("305x200")
 
   game = createRow(tk, label="Game", options=["Final Fantasy X"])
 
