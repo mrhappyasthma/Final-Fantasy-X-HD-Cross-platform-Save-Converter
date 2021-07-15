@@ -163,15 +163,11 @@ Getting CFW on your Switch is outside the scope of this project. For more detail
 
 TODO: No idea on this one. I don't have this game to see if it's encrypted or not. And what format the save is in.
 
-## Run the software and copy the save file to Nintendo Switch
-
-NOTE: If you are using a Nintendo Switch as your source or destination for your save file, you'll need to have a Switch running Custom Firmware (CFW).
-
-### Run the software to create the modified save file
-
-TODO: Add instructions on how to run the software with the source save.
+## Copying the new save file to the target console
 
 ### Copy the modified file to Nintendo Switch
+
+NOTE: If you are using a Nintendo Switch as your source or destination for your save file, you'll need to have a Switch running Custom Firmware (CFW).
 
 Getting CFW on your Switch is outside the scope of this project. For more details, see [switch.homebrew.guide](https://switch.homebrew.guide/) for more info.
 
@@ -184,8 +180,6 @@ Getting CFW on your Switch is outside the scope of this project. For more detail
 4. Use FTP (such as [ftpd](https://github.com/mtheall/ftpd)) or by plugging your SD card into your computer, copy the save file to the `Checkpoint` subfolder for FFX. (For me, it was `/switch/Checkpoint/saves/0x0100BC300CB48000%20FINAL%20FANTASY%20X%20X-2%20HD%20Remaster/<folder_name_from_step_2>`).
 
 5. Run `Checkpoint` and restore the save for FFX.
-
-## Supplemental instructions to copy a save (encrypted, if needed) to other target consoles
 
 ### Encrypt and copy the save file to PS3
 
@@ -201,7 +195,7 @@ TODO
 
 6. Launch FFX and enjoy :)
 
-### Copy the save file to PC
+### Copy the save file to a computer with Steam
 
 1. Locate your FFX [save location](https://www.pcgamingwiki.com/wiki/Final_Fantasy_X/X-2_HD_Remaster#Save_game_data_location) for PC.
 
@@ -214,52 +208,3 @@ TODO
 ### Extract your save file to Xbox One
 
 TODO: No idea on this one. I don't have this game to see if it's encrypted or not. And what format the save is in.
-
-## TODO (notes)
-
-PC to Switch
-1. Copy save to alternate location
-2. Open save in HxD
-3. Paste 08 00 00 00 01 00 01 02 into first 8 bytes
-4. Delete last 8 bytes (Should be all 00, to keep filesize the same)
-5. Overwrite backup save in Checkpoint
-
-Switch to PC
-1. Copy save to alternate location
-2. Open save in HxD
-3. Delete first 8 bytes
-4. Insert 00 into last 8 bytes
-5. Save to PC folder
-
-1 download winhex
-2 use winhex open two save
-3 in psv save press ctrl+a and press ctrl+shift+c
-4 in ns save , press alt+g , input "00000008" confirm the cursor moves to the middle position , press ctrl+b , press ctrl+s , ok
-
-https://www.reddit.com/r/ps3homebrew/wiki/ps3_saves
-
-https://www.youtube.com/watch?v=mMZxlTrpCaM
-
-Copy bytes from 0x0h to 0x67ffh of a PS/PC save to the switch save starting at offset 0x8h.
-
-Then remove the last 8 0’s from the file to ensure the file size is identical.
-
-PS3 or PS4 or PSVita to PC
-
-https://gbatemp.net/threads/convert-ff10-pc-ps3-ps4-psv-save-to-ns.535866/
-
-https://steamcommunity.com/sharedfiles/filedetails/?id=685884099
-https://steamcommunity.com/sharedfiles/filedetails/?id=683458202
-
-PC file format name:
-
-ffx_XXX.dat where number from 000-999
-
-If last 8 bytes are not all 00’s likely it’s encrypted by PS3/PS4 or Vita.
-
-FFX-2
-
-Download HxD, navigate to your save file folder "C:\Users\username\Documents\Square Enix\FINAL FANTASY X&X-2 HD Remaster\FINAL FANTASY X-2"
-Rename your save file to ffx2_main_001.
-Open it with HxD and copy 08 00 00 00 01 00 01 02 then go to Edit>Paste Insert.
-Save the file, transfer it to Checkpoint on the Switch and restore save.
