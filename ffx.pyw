@@ -12,6 +12,7 @@ Resources used:
   - https://gbatemp.net/threads/convert-ff10-pc-ps3-ps4-psv-save-to-ns.535866/
   - https://steamcommunity.com/sharedfiles/filedetails/?id=685884099
   - https://steamcommunity.com/sharedfiles/filedetails/?id=683458202
+  - https://steamcommunity.com/sharedfiles/filedetails/?id=695869704
 """
 
 import binascii
