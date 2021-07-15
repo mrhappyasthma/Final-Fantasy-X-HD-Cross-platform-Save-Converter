@@ -16,19 +16,34 @@ Below is the compatibility chart going to/from the Nintendo Switch.
 
 ### FFX
 
+#### Supported 
+
 Aside from Xbox, I believe all of the others should be doable just based on my research. I could not find anyone attempting this with Xbox.
 
-If supported is 'maybe', it means that I should be able to support it but haven't done it yet.
+This is the list of implemented save conversions, so far.
+
+
+| Supported | Nintendo Switch | Steam | PS3 | PS4 |  PS Vita | Xbox One |
+|-----------|-----------------|-------|-----|-----|----------|----------|
+| Xbox One | NO | NO | NO | NO | NO | - |
+| PS Vita | NO | NO | NO | NO | - | NO |
+| PS4 | NO | NO | NO | - | NO | NO |
+| PS3 | YES | YES | - | NO | NO | NO |
+| Steam | YES | - | YES | NO | NO | NO |
+| Nintendo Switch | - | YES | YES | NO | NO | NO |
+
+#### Verified
 
 'Verified' means that I tried going to/from the console to confirm it worked.
 
-| Console | Supported? | Verified |
-|---------|------------|----------|
-| PS3 | YES | YES |
-| PS4 | YES | NO |
-| PS Vita | YES | NO |
-| PC | YES | NO |
-| Xbox One | NO | NO |
+| Supported | Nintendo Switch | Steam | PS3 | PS4 |  PS Vita | Xbox One |
+|-----------|-----------------|-------|-----|-----|----------|----------|
+| Xbox One | NO | NO | NO | NO | NO | - |
+| PS Vita | NO | NO | NO | NO | - | NO |
+| PS4 | NO | NO | NO | - | NO | NO |
+| PS3 | NO | NO | - | NO | NO | NO |
+| Steam | NO | - | NO | NO | NO | NO |
+| Nintendo Switch | - | NO | NO | NO | NO | NO |
 
 ### FFX-2
 
