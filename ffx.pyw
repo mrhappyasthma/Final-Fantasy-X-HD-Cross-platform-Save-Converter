@@ -1,12 +1,15 @@
+import binascii
+import os
+import sys
 from tkinter import *
 from tkinter import filedialog
 from tkinter import messagebox
-import sys
-import binascii
 
-SWITCH_PREFIX_BYTES = '08 00 00 00 01 00 01 02'
+SWITCH_PREFIX_BYTES = bytearray.fromhex('08 00 00 00 01 00 01 02')
 
-SWITCH_SUFFIX_BYTES = '00 00 00 00 00 00 00 00'
+SWITCH_SUFFIX_BYTES = bytearray.fromhex('00 00 00 00 00 00 00 00')
+
+SWITCH_FILENAME = 'ffx_XXX'
 
 
 def createRow(root, label, options):
@@ -69,6 +72,14 @@ def isEncrypted(file_contents):
   return False
 
 
+def write_bytes_to_file(file_bytes, path, filename):
+  """Writes a `bytearray` to the file at `path/filename`"""
+  absolute_path = os.path.join(path, filename)
+  print(absolute_path)
+  with open(absolute_path, mode='wb') as file:
+    file.write(file_bytes)
+
+
 def convert_save_file(game_option, save_type_option, target_console_option):
   source = save_type_option.get()
   target = target_console_option.get()
@@ -89,10 +100,23 @@ def convert_save_file(game_option, save_type_option, target_console_option):
       if not answer:
         return
 
-    # TODO: Convert saves
+    path = os.path.dirname(os.path.abspath(filename))
+    file_bytes = bytearray(file_content)
+
+    # If the file is a Switch save, convert it to the more standard
+    # format first (the format shared by PC, PS3, PS4, PS Vita).
+    if 'Nintendo Switch' in source:
+      file_bytes = convert_bytes_from_switch(file_bytes)
+
     if 'Nintendo Switch' in target:
       # Append the 8 byte prefix
+      file_bytes = SWITCH_PREFIX_BYTES + file_bytes
+
       # Remove the trailing 8 bytes to keep the file size the same. (These are all 0x00 anyway.)
+      file_bytes = file_bytes[:-8]
+
+      write_bytes_to_file(file_bytes, path, SWITCH_FILENAME)
+
       messagebox.showinfo(title='Nintendo Switch Save',
                           message="Your save is now ready!\n\nPost-work:\n\n1. Rename it from 'ffx_XXX' by replacing the 'XXX' with a number from 000-999 that doesn't collide with an existing save slot. For example: 'ffx_001' would correspond to the second save slot.\n\n2. Use Checkpoint to restore the save.\n\n3. Load the save file on your switch (it may look weird, but this is normal).\n\n4. Use an in-game save point to save the current game. This will fix any weirdness.\n\nFor more details, view the guide on https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter")
     elif 'PS3' in target:
