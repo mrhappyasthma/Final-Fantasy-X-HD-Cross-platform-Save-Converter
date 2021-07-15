@@ -70,7 +70,9 @@ def isEncrypted(file_contents):
 
 
 def convert_save_file(game_option, save_type_option, target_console_option):
-  if save_type_option.get() == target_console_option.get():
+  source = save_type_option.get()
+  target = target_console_option.get()
+  if target in source:
     messagebox.showerror(title='Selection Error',
                          message='Save file type and target console cannot be the same.')
     return
@@ -99,12 +101,12 @@ if __name__ == '__main__':
 
   game = createRow(tk, label="Game", options=["Final Fantasy X"])
 
-  save_type = createRow(tk, label="Save File Type", options=["PC (Steam)", "Nintendo Switch"])
+  save_type = createRow(tk, label="Save File Type", options=["(decrypted) PS3, PS4, PS Vita", "PC (Steam)", "Nintendo Switch"])
 
-  target_console = createRow(tk, label="Target Console", options=["Nintendo Switch", "PC (Steam)"])
+  target_console = createRow(tk, label="Target Console", options=["Nintendo Switch", "PS3", "PC (Steam)"])
 
   open_button = Button(tk, text='Convert save file', command=lambda:convert_save_file(game, save_type, target_console))
-  open_button.pack(expand=True, pady = 10)
+  open_button.pack(expand=True, pady = 5)
 
   answer = messagebox.askyesno(title='Disclaimer',
                                message='WARNING: Use this tool at your own risk. I take no responsibility for lost save files, corrupted saves, bricked consoles, etc.\n\nDo you still want to continue to the tool?')
