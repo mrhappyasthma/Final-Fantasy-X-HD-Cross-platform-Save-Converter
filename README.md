@@ -2,6 +2,12 @@
 
 <img src="https://i.ytimg.com/vi/myDYi0I-cgQ/maxresdefault.jpg" width="480" height="270">
 
+## Disclaimer
+
+WARNING: Use this tool at your own risk. I take no responsibility for lost save files, corrupted saves, bricked consoles, etc.
+
+The methods used here are very inexact and are based around random forums posts online. The tool will modifying arbitrary bytes of the save files, so there is a possibility that things go wrong.
+
 ## How To Use
 
 A helper tool to convert FFX saves between PS3/PS4/PSVita/Steam/Nintendo Switch/Xbox One.
