@@ -101,4 +101,10 @@ if __name__ == '__main__':
   open_button = Button(tk, text='Convert save file', command=lambda:convert_save_file(game, save_type, target_console))
   open_button.pack(expand=True, pady = 10)
 
+  answer = messagebox.askyesno(title='Disclaimer',
+                               message='WARNING: Use this tool at your own risk. I take no responsibility for lost save files, corrupted saves, bricked consoles, etc.\n\nDo you still want to continue to the tool?')
+
+  if not answer:
+    quit();
+
   mainloop()
