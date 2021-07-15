@@ -18,7 +18,7 @@ A helper tool to convert FFX saves between PS3/PS4/PSVita/Steam/Nintendo Switch/
 
 Simply run the tool, select the `Save File Type` for the input save as well as the `Target Console`. Then simply press `Convert save file` and select your existing (decrypted) save.
 
-Lastly, follow the on-screen instructions for the post-work. Or continue reading below.
+Lastly, follow the on-screen instructions for the post-work to get the new save loaded onto your target device. For instructions, see [Copying the New Save File to the Target Console](#copying-the-new-save-file-to-the-target-console).
 
 ![Screenshot of the tool.](https://i.imgur.com/9gtNHnV.png)
 
