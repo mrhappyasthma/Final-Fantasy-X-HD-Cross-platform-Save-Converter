@@ -151,7 +151,7 @@ Getting CFW on your Switch is outside the scope of this project. For more detail
 
 6. Use these save file(s) as the inputs to the program.
 
-### Extract your save file from PC
+### Extract your save file from a machine with Steam
 
 1. Locate your FFX [save location](https://www.pcgamingwiki.com/wiki/Final_Fantasy_X/X-2_HD_Remaster#Save_game_data_location) for PC.
 
