@@ -6,8 +6,8 @@ from enum import Enum
 
 
 class Game(Enum):
-     FFX = 1
-     FFX2 = 2
+  FFX = 1
+  FFX2 = 2
 
 
 # from https://forums.pcsx2.net/Thread-Celsius-FFX-2-Save-game-editor?pid=182634#pid182634
@@ -99,9 +99,22 @@ def _compute_checksum(save_file_bytes, game):
   return checksum_lower_byte, checksum_upper_byte
 
 
-def compute_FFX2_checksum(save_file_bytes):
+def _compute_FFX2_checksum(save_file_bytes):
   return _compute_checksum(save_file_bytes, Game.FFX2)
 
 
-def compute_FFX_checksum(save_file_bytes):
+def _compute_FFX_checksum(save_file_bytes):
   return _compute_checksum(save_file_bytes, Game.FFX)
+
+
+def update_checksum(save_file_bytes, game):
+  checksum_function = _compute_FFX_checksum if game is Game.FFX else _compute_FFX2_checksum
+  file_bytes = save_file_bytes
+  checksum_lower_byte, checksum_upper_byte = checksum_function(file_bytes)
+
+  file_bytes[CHECKSUM_LOCATION_A] = checksum_lower_byte
+  file_bytes[CHECKSUM_LOCATION_A + 1] = checksum_upper_byte
+
+  checksum_location = CHECKSUM_LOCATION_FFX_B if game is Game.FFX else CHECKSUM_LOCATION_FFX2_B
+  file_bytes[checksum_location] = checksum_lower_byte
+  file_bytes[checksum_location + 1] = checksum_upper_byte

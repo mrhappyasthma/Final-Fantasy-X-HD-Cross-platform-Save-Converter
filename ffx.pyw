@@ -18,6 +18,7 @@ Resources used:
 import binascii
 import os
 import sys
+from Modules.checksum import *
 from tkinter import *
 from tkinter import filedialog
 from tkinter import messagebox
@@ -148,39 +149,42 @@ def convert_save_file(game_option, save_type_option, target_console_option):
       # Remove the trailing 8 bytes to keep the file size the same. (These are all 0x00 anyway.)
       file_bytes = file_bytes[:-8]
 
-      write_bytes_to_file(file_bytes, path, SWITCH_FILENAME)
-
-      messagebox.showinfo(title='Nintendo Switch Save',
-                          message=("Your save is now ready!\n\nPost-work:\n\n1. Rename it from 'ffx_XXX' by "
-                                   "replacing the 'XXX' with a number from 000-999 that doesn't collide with "
-                                   "an existing save slot. For example: 'ffx_001' would correspond to the "
-                                   "second save slot.\n\n2. Use Checkpoint to restore the save.\n\n3. Load "
-                                   "the save file on your switch (it may look weird, but this is "
-                                   "normal).\n\n4. Use an in-game save point to save the current game. This "
-                                   "will fix any weirdness.\n\nFor more details, view the guide on "
-                                   "https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter"))
+      target_filename = SWITCH_FILENAME
+      title='Nintendo Switch Save'
+      message=("Your save is now ready!\n\nPost-work:\n\n1. Rename it from 'ffx_XXX' by "
+               "replacing the 'XXX' with a number from 000-999 that doesn't collide with "
+               "an existing save slot. For example: 'ffx_001' would correspond to the "
+               "second save slot.\n\n2. Use Checkpoint to restore the save.\n\n3. Load "
+               "the save file on your switch (it may look weird, but this is "
+               "normal).\n\n4. Use an in-game save point to save the current game. This "
+               "will fix any weirdness.\n\nFor more details, view the guide on "
+               "https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter")
     elif 'PS3' in target:
-      write_bytes_to_file(file_bytes, path, PS3_FILENAME)
-      messagebox.showinfo(title='PS3 (decrypted) Save',
-                          message=("Your save is now ready!\n\nPost-work:\n\n1. Use a tool such as 'Bruteforce Sava Data' "
-                                   "to encrypt the SAVES file.\n\n2. Use a USB flashdrive to copy the encrypted PS3 folder "
-                                   "back to the device.\n\n3. Load the save file on your PS3 (it may look weird, but "
-                                   "this is normal).\n\n4. Use an in-game save point to save the current game. This "
-                                   "will fix any weirdness.\n\nFor more details, view the guide on "
-                                   "https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter"))
+      target_filename = PS3_FILENAME
+      title='PS3 (decrypted) Save'
+      message=("Your save is now ready!\n\nPost-work:\n\n1. Use a tool such as 'Bruteforce Sava Data' "
+               "to encrypt the SAVES file.\n\n2. Use a USB flashdrive to copy the encrypted PS3 folder "
+               "back to the device.\n\n3. Load the save file on your PS3 (it may look weird, but "
+               "this is normal).\n\n4. Use an in-game save point to save the current game. This "
+               "will fix any weirdness.\n\nFor more details, view the guide on "
+               "https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter")
     elif 'Steam' in target:
-      write_bytes_to_file(file_bytes, path, PC_FILENAME)
-      messagebox.showinfo(title='Steam Save',
-                          message=("Your save is now ready!\n\nPost-work:\n\n1. Rename it from 'ffx_XXX' by "
-                                   "replacing the 'XXX' with a number from 000-999 that doesn't collide with "
-                                   "an existing save slot. For example: 'ffx_001' would correspond to the "
-                                   "second save slot.\n\n2. Copy the renamed save file to the appropriate "
-                                   "saved data location for your Steam device "
-                                   "(https://www.pcgamingwiki.com/wiki/Final_Fantasy_X/X-2_HD_Remaster#Save_game_data_location)."
-                                   "\n\n3. Load the save file on your PC (it may look weird, but this is "
-                                   "normal).\n\n4. Use an in-game save point to save the current game. This "
-                                   "will fix any weirdness.\n\nFor more details, view the guide on "
-                                   "https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter"))
+      target_filename = PC_FILENAME
+      title='Steam Save'
+      message=("Your save is now ready!\n\nPost-work:\n\n1. Rename it from 'ffx_XXX' by "
+               "replacing the 'XXX' with a number from 000-999 that doesn't collide with "
+               "an existing save slot. For example: 'ffx_001' would correspond to the "
+               "second save slot.\n\n2. Copy the renamed save file to the appropriate "
+               "saved data location for your Steam device "
+               "(https://www.pcgamingwiki.com/wiki/Final_Fantasy_X/X-2_HD_Remaster#Save_game_data_location)."
+               "\n\n3. Load the save file on your PC (it may look weird, but this is "
+               "normal).\n\n4. Use an in-game save point to save the current game. This "
+               "will fix any weirdness.\n\nFor more details, view the guide on "
+               "https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter")
+
+    update_checksum(file_bytes, Game.FFX)
+    write_bytes_to_file(file_bytes, path, target_filename)
+    messagebox.showinfo(title=title, message=message)
 
 
 if __name__ == '__main__':
