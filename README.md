@@ -38,11 +38,11 @@ This is the list of implemented save conversions, so far.
 | Supported | Nintendo Switch | Steam | PS3 | PS4 |  PS Vita | Xbox One |
 |-----------|-----------------|-------|-----|-----|----------|----------|
 | Xbox One | NO | NO | NO | NO | NO | - |
-| PS Vita | NO | NO | NO | NO | - | NO |
+| PS Vita | Yes | YES | YES | NO | - | NO |
 | PS4 | NO | NO | NO | - | NO | NO |
-| PS3 | YES | YES | - | NO | NO | NO |
-| Steam | YES | - | YES | NO | NO | NO |
-| Nintendo Switch | - | YES | YES | NO | NO | NO |
+| PS3 | YES | YES | - | NO | YES | NO |
+| Steam | YES | - | YES | NO | YES | NO |
+| Nintendo Switch | - | YES | YES | NO | YES | NO |
 
 #### Verified
 
