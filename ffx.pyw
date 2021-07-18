@@ -200,12 +200,12 @@ def convert_save_file(game_option, save_type_option, target_console_option):
     elif 'PS Vita' in target:
       target_filename = PS_VITA_FILENAME
       title='PS Vita (decrypted) Save'
-      message=("Your save is now ready!\n\nPost-work:\n\n1. Rename the file from 'dataXXXX.bin' to "
+      message=("Your save is now ready!\n\nPost-work:\n\n1. Rename the file from 'dataXXXX.bin' by "
                "replacing the 'XXXX' with a number from 0000-0999 that DOES collide with an "
                "existing save slot.  NOTE: You must actually replace an existing save slot with the "
                "new save. For example: 'data0001.bin' would correspond to the second save slot.\n\n"
                "2. Copy this file to your PS Vita, such as over FTP.\n\n3. Use 'Vita Shell' and "
-               "locate the new save file. Press Traingle and 'Copy' the new save file.\n\n4. "
+               "locate the new save file. Press Triangle and 'Copy' the new save file.\n\n4. "
                "Navigate to 'ux0:user/00/savedata/'. Press Triangle over the PCSE00293/ folder "
                "and select 'Open decrypted'.\n\n5. Then press' Triangle' and 'Paste'. \n\n6. Load "
                "the save file on your PS Vita by launching the game (it may still resemble the "
