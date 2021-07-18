@@ -118,3 +118,4 @@ def update_checksum(save_file_bytes, game):
   checksum_location = CHECKSUM_LOCATION_FFX_B if game is Game.FFX else CHECKSUM_LOCATION_FFX2_B
   file_bytes[checksum_location] = checksum_lower_byte
   file_bytes[checksum_location + 1] = checksum_upper_byte
+  return file_bytes

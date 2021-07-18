@@ -136,11 +136,12 @@ def file_size_for_target(target, game):
 
 
 def correct_file_size(file_bytes, game, target):
-  file_size = file_size_for_target(target, game)
+  target_file_size = file_size_for_target(target, game)
   # For files that are too small, append 0x00.
-  while file_size <= len(file_bytes):
+  while len(file_bytes) <= target_file_size:
     file_bytes.append(0x00)
-  while file_size > len(file_bytes):
+  # For files that are too big, trim the trailing 0x00's.
+  while len(file_bytes) > target_file_size:
     file_bytes.pop()
   return file_bytes
 
@@ -213,7 +214,7 @@ def convert_save_file(game_option, save_type_option, target_console_option):
                "\n\nFor more details, view the guide on the guide on "
                "https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter")
     elif 'Steam' in target:
-      target_filename = PC_FILENAME
+      target_filename = STEAM_FILENAME
       title='Steam Save'
       message=("Your save is now ready!\n\nPost-work:\n\n1. Rename it from 'ffx_XXX' by "
                "replacing the 'XXX' with a number from 000-999 that doesn't collide with "
@@ -226,8 +227,8 @@ def convert_save_file(game_option, save_type_option, target_console_option):
                "will fix any weirdness.\n\nFor more details, view the guide on "
                "https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter")
 
-    file_bytes = update_checksum(file_bytes, Game.FFX)
     file_bytes = correct_file_size(file_bytes, Game.FFX, target)
+    file_bytes = update_checksum(file_bytes, Game.FFX)
     write_bytes_to_file(file_bytes, path, target_filename)
     messagebox.showinfo(title=title, message=message)
 
