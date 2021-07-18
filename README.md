@@ -10,6 +10,12 @@ The methods used here are very inexact and are based around random forums posts 
 
 The tool itself modifies arbitrary bytes of the save files, so there is a possibility that things go wrong. Always make backups of your saves.
 
+## Scope
+
+The scope of this project is just to help automate save file conversions between platforms.
+
+To actually modify attributes of the save to manipulate the data, see existing tools such as [FFXED](https://forums.pcsx2.net/Thread-FFXED-Final-Fantasy-X-Save-Editor?pid=66458), [Final Fantasy X Editor](https://forums.pcsx2.net/Thread-Final-Fantasy-X-Editor-v2-0-3), or [Celsius](https://forums.pcsx2.net/Thread-Celsius-FFX-2-Save-game-editor).
+
 ## Compatibility
 
 Below is the compatibility chart going to/from the Nintendo Switch.
