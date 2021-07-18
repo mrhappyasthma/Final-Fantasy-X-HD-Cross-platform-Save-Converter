@@ -160,6 +160,11 @@ def convert_save_file(game_option, save_type_option, target_console_option):
 
   with open(filename, mode='rb') as file:
     file_content = file.read()
+    # If the file is too large, assume it's not a valid FFX save.
+    if len(file_content) > SWITCH_FILE_SIZE:
+      messagebox.showerror(title='Input Error',
+                           message='Only valid Final Fantasy X saves are supported.')
+      return
     if isEncrypted(source, file_content):
       answer = messagebox.askyesno(title='Encryption Error',
                                    message='The file appears to be encrypted. Attempting the conversion may result in a corrupted save.\n\nDo you want to continue anyway?\n\nVisit https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter for more details.')
