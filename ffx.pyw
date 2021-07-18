@@ -31,11 +31,19 @@ from tkinter import messagebox
 # bytes generated from the header file for a legit save.
 SWITCH_PREFIX_BYTES = bytearray.fromhex('08 00 00 00 01 00 01 02')
 
-SWITCH_SUFFIX_BYTES = bytearray.fromhex('00 00 00 00 00 00 00 00')
-
 PS3_FILENAME = 'SAVES'
+PS_VITA_FILENAME = 'dataXXXX.bin'
 SWITCH_FILENAME = 'ffx_XXX'
 STEAM_FILENAME = 'ffx_XXX'
+
+# Sizes in bytes.
+PS2_FILE_SIZE = 25848  # Original and International edition
+PS3_DECRYPTED_FILE_SIZE = 26872
+#TODO: PS4 Size (decrypted)
+PS_VITA_DECRYPTED_FILE_SIZE = 26872
+STEAM_FILE_SIZE = 26880
+SWITCH_FILE_SIZE = 26880
+# TODO: Xbox One Size
 
 
 def createRow(root, label, options):
@@ -81,8 +89,8 @@ def createOptionMenuInRow(row, *options):
   return value
 
 
-def isEncrypted(file_contents):
-  """Returns a boolean indicating whether the file is encrypted or not.
+def isEncrypted(target, file_contents):
+  """Returns a boolean indicating whether the file may be encrypted or not.
 
   Checks the last 8 bytes to ensure they are all 0x00. Anything else is
   assumed to be encrypted (which may have false positives, but should be
@@ -91,6 +99,8 @@ def isEncrypted(file_contents):
   NOTE: This is a very crude approximation, but should work well enough
   for the FFX save files.
   """
+  if not 'PS' in target:  # Only apply to Playstation saves.
+    return False
   for i in range(1, 9):
     i = i * -1;
     if chr(file_contents[i]) != '\x00':
@@ -108,15 +118,36 @@ def write_bytes_to_file(file_bytes, path, filename):
 
 def convert_bytes_from_switch(file_bytes):
   # Trim the first 8 bytes.
-  file_bytes = file_bytes[8:]
-  # Append the Switch suffix.
-  file_bytes = file_bytes + SWITCH_SUFFIX_BYTES
+  return file_bytes[8:]
+
+def file_size_for_target(target, game):
+    if game == Game.FFX:
+      if 'Nintendo Switch' in target:
+        return SWITCH_FILE_SIZE
+      elif 'PS2' in target:
+        return PS2_FILE_SIZE
+      elif 'PS3' in target:
+        return PS3_DECRYPTED_FILE_SIZE
+      elif 'PS Vita' in target:
+        return PS_VITA_DECRYPTED_FILE_SIZE
+      elif 'Steam' in target:
+        return STEAM_FILE_SIZE
+    return None  # TODO for FFX2
+
+
+def correct_file_size(file_bytes, game, target):
+  file_size = file_size_for_target(target, game)
+  # For files that are too small, append 0x00.
+  while file_size <= len(file_bytes):
+    file_bytes.append(0x00)
+  while file_size > len(file_bytes):
+    file_bytes.pop()
   return file_bytes
 
 
 def convert_save_file(game_option, save_type_option, target_console_option):
-  source = save_type_option.get()
-  target = target_console_option.get()
+  source = save_type_option.get().replace('(decrypted)', '').strip()
+  target = target_console_option.get().replace('(decrypted)', '').strip()
   if target in source:
     messagebox.showerror(title='Selection Error',
                          message='Save file type and target console cannot be the same.')
@@ -128,7 +159,7 @@ def convert_save_file(game_option, save_type_option, target_console_option):
 
   with open(filename, mode='rb') as file:
     file_content = file.read()
-    if isEncrypted(file_content):
+    if isEncrypted(target, file_content):
       answer = messagebox.askyesno(title='Encryption Error',
                                    message='The file appears to be encrypted. Attempting the conversion may result in a corrupted save.\n\nDo you want to continue anyway?\n\nVisit https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter for more details.')
       if not answer:
@@ -143,11 +174,8 @@ def convert_save_file(game_option, save_type_option, target_console_option):
       file_bytes = convert_bytes_from_switch(file_bytes)
 
     if 'Nintendo Switch' in target:
-      # Append the 8 byte prefix
+      # Append the 8 byte prefix.
       file_bytes = SWITCH_PREFIX_BYTES + file_bytes
-
-      # Remove the trailing 8 bytes to keep the file size the same. (These are all 0x00 anyway.)
-      file_bytes = file_bytes[:-8]
 
       target_filename = SWITCH_FILENAME
       title='Nintendo Switch Save'
@@ -168,6 +196,22 @@ def convert_save_file(game_option, save_type_option, target_console_option):
                "this is normal).\n\n4. Use an in-game save point to save the current game. This "
                "will fix any weirdness.\n\nFor more details, view the guide on "
                "https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter")
+    elif 'PS Vita' in target:
+      target_filename = PS_VITA_FILENAME
+      title='PS Vita (decrypted) Save'
+      message=("Your save is now ready!\n\nPost-work:\n\n1. Rename the file from 'dataXXXX.bin' to "
+               "replacing the 'XXXX' with a number from 0000-0999 that DOES collide with an "
+               "existing save slot.  NOTE: You must actually replace an existing save slot with the "
+               "new save. For example: 'data0001.bin' would correspond to the second save slot.\n\n"
+               "2. Copy this file to your PS Vita, such as over FTP.\n\n3. Use 'Vita Shell' and "
+               "locate the new save file. Press Traingle and 'Copy' the new save file.\n\n4. "
+               "Navigate to 'ux0:user/00/savedata/'. Press Triangle over the PCSE00293/ folder "
+               "and select 'Open decrypted'.\n\n5. Then press' Triangle' and 'Paste'. \n\n6. Load "
+               "the save file on your PS Vita by launching the game (it may still resemble the "
+               "previous save file that was there, but this is normal).\n\n7. Use an in-game save "
+               "point to save the currently running game. This will correct the save file."
+               "\n\nFor more details, view the guide on the guide on "
+               "https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter")
     elif 'Steam' in target:
       target_filename = PC_FILENAME
       title='Steam Save'
@@ -182,7 +226,8 @@ def convert_save_file(game_option, save_type_option, target_console_option):
                "will fix any weirdness.\n\nFor more details, view the guide on "
                "https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter")
 
-    update_checksum(file_bytes, Game.FFX)
+    file_bytes = update_checksum(file_bytes, Game.FFX)
+    file_bytes = correct_file_size(file_bytes, Game.FFX, target)
     write_bytes_to_file(file_bytes, path, target_filename)
     messagebox.showinfo(title=title, message=message)
 
@@ -202,7 +247,7 @@ if __name__ == '__main__':
                         options=["Steam (PC, Linux, Mac)", "(decrypted) PS3", "(decrypted) PS4",  "(decrypted) PS Vita", "Nintendo Switch"])
 
   target_console = createRow(tk, label="Target Console",
-                             options=["Nintendo Switch", "PS3 (decrypted)", "Steam (PC, Linux, Mac)"])
+                             options=["Nintendo Switch", "Steam (PC, Linux, Mac)", "PS3 (decrypted)", "PS Vita (decrypted)"])
 
   open_button = Button(tk, text='Convert save file', command=lambda:convert_save_file(game, save_type, target_console))
   open_button.pack(expand=True, pady = 5)
