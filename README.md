@@ -23,27 +23,27 @@ Aside from Xbox, I believe all of the others should be doable just based on my r
 This is the list of implemented save conversions, so far.
 
 
-| Supported | Nintendo Switch | Steam | PS3 | PS4 |  PS Vita | Xbox One |
-|-----------|-----------------|-------|-----|-----|----------|----------|
-| Xbox One | NO | NO | NO | NO | NO | - |
-| PS Vita | Yes | YES | YES | NO | - | NO |
-| PS4 | NO | NO | NO | - | NO | NO |
-| PS3 | YES | YES | - | NO | YES | NO |
-| Steam | YES | - | YES | NO | YES | NO |
-| Nintendo Switch | - | YES | YES | NO | YES | NO |
+| Supported | Nintendo Switch | Steam | PS2 | PS3 | PS4 |  PS Vita | Xbox One |
+|-----------|-----------------|-------|-----|-----|-----|----------|----------|
+| Nintendo Switch | - | YES | YES | YES | NO | YES | NO |
+| Steam | YES | - | YES | YES | NO | YES | NO |
+| PS3 | YES | YES | YES | - | NO | YES | NO |
+| PS4 | NO | NO | NO | NO | - | NO | NO |
+| PS Vita | Yes | YES | YES | YES | NO | - | NO |
+| Xbox One | NO | NO | NO | NO | NO | NO | - |
 
 #### Verified
 
 'Verified' means that I tried going to/from the console to confirm it worked.
 
-| Supported | Nintendo Switch | Steam | PS3 | PS4 |  PS Vita | Xbox One |
-|-----------|-----------------|-------|-----|-----|----------|----------|
-| Xbox One | NO | NO | NO | NO | NO | - |
-| PS Vita | NO | NO | NO | NO | - | NO |
-| PS4 | NO | NO | NO | - | NO | NO |
-| PS3 | NO | NO | - | NO | NO | NO |
-| Steam | NO | - | NO | NO | NO | NO |
-| Nintendo Switch | - | NO | NO | NO | NO | NO |
+| Supported | Nintendo Switch | Steam | PS2 | PS3 | PS4 |  PS Vita | Xbox One |
+|-----------|-----------------|-------|-----|-----|-----|----------|----------|
+| Nintendo Switch | - | NO |NO | NO | NO | NO | NO |
+| Steam | NO | - | NO | NO | NO | NO | NO |
+| PS3 | NO | NO | NO | - | NO | NO | NO |
+| PS4 | NO | NO | NO | NO | - | NO | NO |
+| PS Vita | NO | NO | NO | NO | NO | - | NO |
+| Xbox One | NO | NO | NO | NO | NO | NO | - |
 
 ### FFX-2
 
