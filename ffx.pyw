@@ -89,7 +89,7 @@ def createOptionMenuInRow(row, *options):
   return value
 
 
-def isEncrypted(target, file_contents):
+def isEncrypted(source, file_contents):
   """Returns a boolean indicating whether the file may be encrypted or not.
 
   Checks the last 8 bytes to ensure they are all 0x00. Anything else is
@@ -99,7 +99,7 @@ def isEncrypted(target, file_contents):
   NOTE: This is a very crude approximation, but should work well enough
   for the FFX save files.
   """
-  if not 'PS' in target:  # Only apply to Playstation saves.
+  if source == 'PS2' or not 'PS' in source:  # Only apply to Playstation 3,4,Vita saves.
     return False
   for i in range(1, 9):
     i = i * -1;
@@ -160,7 +160,7 @@ def convert_save_file(game_option, save_type_option, target_console_option):
 
   with open(filename, mode='rb') as file:
     file_content = file.read()
-    if isEncrypted(target, file_content):
+    if isEncrypted(source, file_content):
       answer = messagebox.askyesno(title='Encryption Error',
                                    message='The file appears to be encrypted. Attempting the conversion may result in a corrupted save.\n\nDo you want to continue anyway?\n\nVisit https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter for more details.')
       if not answer:
@@ -245,7 +245,7 @@ if __name__ == '__main__':
   game = createRow(tk, label="Game", options=["Final Fantasy X"])
 
   save_type = createRow(tk, label="Save File Type",
-                        options=["Steam (PC, Linux, Mac)", "(decrypted) PS3", "(decrypted) PS4",  "(decrypted) PS Vita", "Nintendo Switch"])
+                        options=["Steam (PC, Linux, Mac)", "PS2", "(decrypted) PS3", "(decrypted) PS4",  "(decrypted) PS Vita", "Nintendo Switch"])
 
   target_console = createRow(tk, label="Target Console",
                              options=["Nintendo Switch", "Steam (PC, Linux, Mac)", "PS3 (decrypted)", "PS Vita (decrypted)"])
