@@ -14,8 +14,8 @@ class Game(Enum):
 CRC_START_OFFSET = 0x40
 CRC_SEED = 0xFFFF
 
-CRC_END_FFX = 0x64F8  # 25848 bytes - the size of FFX International Edition save
-CRC_END_FFX2 = 0x16270  # 90736 bytes - the size of FFX-2 save
+CRC_END_FFX = 0x64F8  # 25848 bytes - the size of FFX save
+CRC_END_FFX2 = 0x16270  # 90736 bytes - the size of FFX-2 International Edition save
 
 # Allegedly there are two checksum locations according to https://gamefaqs.gamespot.com/boards/197344-final-fantasy-x/48762606
 CHECKSUM_LOCATION_A = 0x1A  # Shared with FFX and FFX2
