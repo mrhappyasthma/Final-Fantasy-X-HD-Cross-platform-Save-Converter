@@ -51,11 +51,11 @@ This 'should' be implementable. But I don't have saves to test it. This is a str
 
 ## How To Use
 
-See the wiki for a list of [Known Issues](https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter/wiki#how-to-use).
+See the [wiki](https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter/wiki) for [How to Use](https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter/wiki#how-to-use).
 
 ## Known issues
 
-See the wiki for a list of [Known Issues](https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter/wiki/Known-Issues).
+See the [wiki](https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter/wiki) for a list of [Known Issues](https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter/wiki/Known-Issues).
 
 ## Guides
 
