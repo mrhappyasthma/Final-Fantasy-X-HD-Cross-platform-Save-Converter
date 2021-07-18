@@ -10,18 +10,6 @@ The methods used here are very inexact and are based around random forums posts 
 
 The tool itself modifies arbitrary bytes of the save files, so there is a possibility that things go wrong. Always make backups of your saves.
 
-## How To Use
-
-A helper tool to convert FFX saves between PS3/PS4/PSVita/Steam/Nintendo Switch/Xbox One.
-
-*The tool assumes you already have your existing FFX save file (decrypted, if needed) on your computer. For instructions, see [Extract a Decrypted Version of Your Save File](#extract-a-decrypted-version-of-your-save-file).*
-
-Simply run the tool, select the `Save File Type` for the input save as well as the `Target Console`. Then simply press `Convert save file` and select your existing (decrypted) save.
-
-Lastly, follow the on-screen instructions for the post-work to get the new save loaded onto your target device. For instructions, see [Copying the New Save File to the Target Console](#copying-the-new-save-file-to-the-target-console).
-
-![Screenshot of the tool.](https://i.imgur.com/9gtNHnV.png)
-
 ## Compatibility
 
 Below is the compatibility chart going to/from the Nintendo Switch.
@@ -60,6 +48,10 @@ This is the list of implemented save conversions, so far.
 ### FFX-2
 
 This 'should' be implementable. But I don't have saves to test it. This is a stretch goal for me.
+
+## How To Use
+
+See the wiki for a list of [Known Issues](https://github.com/mrhappyasthma/Final-Fantasy-X-HD-Cross-platform-Save-Converter/wiki#how-to-use).
 
 ## Known issues
 
