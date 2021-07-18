@@ -20,6 +20,8 @@ To actually modify attributes of the save to manipulate the data, see existing t
 
 Below is the compatibility chart going to/from the Nintendo Switch.
 
+_Note:For conversions between PS3 <-> PS4 <-> PS Vita, you can use the built-in `Data Transfer` tool to utilize the cloud saves. You can still use this project, but it's somewhat redundant. It's also way more steps, since Playstation saves are encrypted and you'll need to decrypt and re-encrypt each time._
+
 ### FFX
 
 #### Supported 
