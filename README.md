@@ -42,7 +42,7 @@ This is the list of implemented save conversions, so far.
 | Steam | NO | - | NO | NO | NO | NO | NO |
 | PS3 | NO | NO | NO | - | NO | NO | NO |
 | PS4 | NO | NO | NO | NO | - | NO | NO |
-| PS Vita | NO | NO | NO | NO | NO | - | NO |
+| PS Vita | NO | NO | YES | NO | NO | - | NO |
 | Xbox One | NO | NO | NO | NO | NO | NO | - |
 
 ### FFX-2
